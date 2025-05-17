@@ -53,6 +53,7 @@ font-family: 'Montserrat', sans-serif;
 color: #333;
 line-height: 1.6;
 scroll-behavior: smooth;
+padding-top: 80px; /* Añadido para compensar la barra fija */
 }
 h1, h2, h3, h4, h5 {
 font-family: 'Poppins', sans-serif;
@@ -160,6 +161,10 @@ max-height: 500px;
 background-color: #f8f9fa;
 padding: 10px 0;
 border-bottom: 1px solid #e5e7eb;
+position: fixed; /* Hacer la barra de navegación fija */
+top: 0; /* Pegarla en la parte superior */
+width: 100%; /* Ocupar todo el ancho */
+z-index: 1000; /* Asegurar que esté por encima de otros elementos */
 }
 .blog-nav-container {
 max-width: 1200px;
@@ -252,10 +257,19 @@ transform: translateX(3px);
 text-align: center;
 margin-top: 50px;
 }
+/* Nuevos estilos para la barra de navegación principal */
+.main-nav {
+position: fixed; /* Hacer la barra fija */
+top: 40px; /* Colocarla debajo de la barra de blog-nav */
+width: 100%; /* Ocupar todo el ancho */
+z-index: 999; /* Z-index menor que blog-nav */
+background-color: white; /* Fondo blanco */
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
 </style>
 </head>
 <body>
-<!-- Barra de navegación -->
+<!-- Barra de navegación superior (blog) -->
 <nav class="blog-nav">
 <div class="blog-nav-container">
 <div class="blog-nav-links">
@@ -265,7 +279,8 @@ margin-top: 50px;
 </div>
 </nav>
 
-<nav class="bg-white py-4 px-6 shadow-md fixed top-0 w-full z-50" style="top: 40px;">
+<!-- Barra de navegación principal (ahora fija) -->
+<nav class="main-nav bg-white py-4 px-6 shadow-md">
 <div class="container mx-auto flex justify-between items-center">
 <div class="flex items-center">
 <div class="text-2xl font-bold text-blue-800">DAWE <span class="text-green-600">HEALTHCARE</span></div>
@@ -304,7 +319,7 @@ margin-top: 50px;
 </nav>
 
 <!-- Sección Hero -->
-<section id="inicio" class="hero-bg pt-32 pb-20 text-white" style="margin-top: 40px;">
+<section id="inicio" class="hero-bg pt-32 pb-20 text-white">
 <div class="container mx-auto px-6">
 <div class="md:flex items-center">
 <div class="md:w-1/2 mb-8 md:mb-0">
@@ -349,7 +364,7 @@ Conoce más
 <h3 class="text-xl font-bold mb-3 text-center">Mayor bienestar emocional</h3>
 <p class="text-gray-600">La recuperación en un entorno familiar reduce el estrés y la ansiedad, factores clave para una más rápida recuperación.</p>
 </div>
-<div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
+<div class="bg-white p-8 rounded-lg shadow-custom transitionall duration-300 hover:shadow-lg">
 <div class="text-center mb-4">
 <i class="fas fa-coins benefit-icon"></i>
 </div>
@@ -818,7 +833,7 @@ const targetId = this.getAttribute('href');
 const targetElement = document.querySelector(targetId);
 if (targetElement) {
 window.scrollTo({
-top: targetElement.offsetTop - 80,
+top: targetElement.offsetTop - 120, // Ajustado para compensar las barras fijas
 behavior: 'smooth'
 });
 }
