@@ -21,26 +21,26 @@
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "MedicalOrganization",
-  "name": "DAWE Healthcare",
-  "url": "https://dawehealthcare.github.io",
-  "logo": "https://www.sehogarelsalvador.com/blog/wp-content/uploads/2018/11/enfermerosoncologico.jpg",
-  "sameAs": [
-    "https://facebook.com/dawehealthcare",
-    "https://instagram.com/dawehealthcare"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+50494572918",
-    "contactType": "Customer Service",
-    "areaServed": "HN"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "San Pedro Sula",
-    "addressCountry": "HN"
-  }
+"@context": "https://schema.org",
+"@type": "MedicalOrganization",
+"name": "DAWE Healthcare",
+"url": "https://dawehealthcare.github.io",
+"logo": "https://www.sehogarelsalvador.com/blog/wp-content/uploads/2018/11/enfermerosoncologico.jpg",
+"sameAs": [
+"https://facebook.com/dawehealthcare",
+"https://instagram.com/dawehealthcare"
+],
+"contactPoint": {
+"@type": "ContactPoint",
+"telephone": "+50494572918",
+"contactType": "Customer Service",
+"areaServed": "HN"
+},
+"address": {
+"@type": "PostalAddress",
+"addressLocality": "San Pedro Sula",
+"addressCountry": "HN"
+}
 }
 </script>
 <!-- Stylesheets -->
@@ -49,628 +49,781 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 body {
-  font-family: 'Montserrat', sans-serif;
-  color: #333;
-  line-height: 1.6;
-  scroll-behavior: smooth;
+font-family: 'Montserrat', sans-serif;
+color: #333;
+line-height: 1.6;
+scroll-behavior: smooth;
 }
 h1, h2, h3, h4, h5 {
-  font-family: 'Poppins', sans-serif;
+font-family: 'Poppins', sans-serif;
 }
 .hero-bg {
-  background-image: linear-gradient(rgba(0, 73, 123, 0.7), rgba(0, 73, 123, 0.7)), url('https://www.avera.org/app/files/public/82111/home-health-visit-with-elderly-patient.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+background-image: linear-gradient(rgba(0, 73, 123, 0.7), rgba(0, 73, 123, 0.7)), url('https://www.avera.org/app/files/public/82111/home-health-visit-with-elderly-patient.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
 }
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 73, 123, 0.2);
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0, 73, 123, 0.2);
 }
 .blue-gradient {
-  background: linear-gradient(135deg, #0077B6, #023E8A);
+background: linear-gradient(135deg, #0077B6, #023E8A);
 }
 .green-accent {
-  color: #4CAF50;
+color: #4CAF50;
 }
 .testimonial {
-  background-color: #f8f9fa;
-  border-left: 4px solid #0077B6;
+background-color: #f8f9fa;
+border-left: 4px solid #0077B6;
 }
 .cta-button {
-  background-color: #25D366;
-  transition: all 0.3s ease;
+background-color: #25D366;
+transition: all 0.3s ease;
 }
 .cta-button:hover {
-  background-color: #128C7E;
-  transform: scale(1.05);
+background-color: #128C7E;
+transform: scale(1.05);
 }
 .shadow-custom {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 .benefit-icon {
-  color: #0077B6;
-  font-size: 2.5rem;
+color: #0077B6;
+font-size: 2.5rem;
 }
 .section-divider {
-  height: 4px;
-  width: 80px;
-  background: linear-gradient(to right, #0077B6, #4CAF50);
-  margin: 0 auto;
+height: 4px;
+width: 80px;
+background: linear-gradient(to right, #0077B6, #4CAF50);
+margin: 0 auto;
 }
 .service-icon {
-  font-size: 2rem;
-  color: #0077B6;
+font-size: 2rem;
+color: #0077B6;
 }
 .step-number {
-  background-color: #0077B6;
-  color: white;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  margin-right: 15px;
+background-color: #0077B6;
+color: white;
+width: 36px;
+height: 36px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+margin-right: 15px;
 }
 .floating-whatsapp {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 100;
-  animation: pulse 2s infinite;
+position: fixed;
+bottom: 30px;
+right: 30px;
+z-index: 100;
+animation: pulse 2s infinite;
 }
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.1);
+}
+100% {
+transform: scale(1);
+}
 }
 .nav-link {
-  position: relative;
+position: relative;
 }
 .nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #0077B6;
-  transition: width 0.3s ease;
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0077B6;
+transition: width 0.3s ease;
 }
 .nav-link:hover::after {
-  width: 100%;
+width: 100%;
 }
 .mobile-menu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease-out;
 }
 .mobile-menu.open {
-  max-height: 500px;
+max-height: 500px;
+}
+.blog-nav {
+background-color: #f8f9fa;
+padding: 10px 0;
+border-bottom: 1px solid #e5e7eb;
+}
+.blog-nav-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+.blog-nav-links {
+display: flex;
+gap: 15px;
+}
+.blog-nav a {
+color: #4b5563;
+font-weight: 500;
+transition: color 0.3s;
+}
+.blog-nav a:hover {
+color: #0077B6;
+}
+.blog-section {
+padding: 80px 0;
+background-color: #ffffff;
+}
+.blog-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+.blog-header {
+text-align: center;
+margin-bottom: 50px;
+}
+.blog-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 30px;
+}
+.blog-card {
+background: #ffffff;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.blog-image {
+width: 100%;
+height: 200px;
+object-fit: cover;
+}
+.blog-content {
+padding: 20px;
+}
+.blog-date {
+color: #6b7280;
+font-size: 14px;
+margin-bottom: 10px;
+}
+.blog-title {
+font-size: 20px;
+font-weight: 600;
+margin-bottom: 10px;
+color: #111827;
+}
+.blog-excerpt {
+color: #6b7280;
+margin-bottom: 15px;
+line-height: 1.5;
+}
+.blog-read-more {
+color: #0077B6;
+font-weight: 500;
+text-decoration: none;
+display: inline-flex;
+align-items: center;
+}
+.blog-read-more:hover {
+text-decoration: underline;
+}
+.blog-read-more i {
+margin-left: 5px;
+transition: transform 0.3s;
+}
+.blog-read-more:hover i {
+transform: translateX(3px);
+}
+.blog-cta {
+text-align: center;
+margin-top: 50px;
 }
 </style>
 </head>
 <body>
 <!-- Barra de navegación -->
-<nav class="bg-white py-4 px-6 shadow-md fixed top-0 w-full z-50">
-  <div class="container mx-auto flex justify-between items-center">
-    <div class="flex items-center">
-      <div class="text-2xl font-bold text-blue-800">DAWE <span class="text-green-600">HEALTHCARE</span></div>
-    </div>
-    <!-- Menú para desktop -->
-    <div class="hidden md:block">
-      <a href="#inicio" class="mx-3 hover:text-blue-700 nav-link">Inicio</a>
-      <a href="#servicios" class="mx-3 hover:text-blue-700 nav-link">Servicios</a>
-      <a href="#beneficios" class="mx-3 hover:text-blue-700 nav-link">Beneficios</a>
-      <a href="#contacto" class="mx-3 hover:text-blue-700 nav-link">Contacto</a>
-    </div>
-    <div class="hidden md:block">
-      <a href="https://wa.me/50494572918" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full transition-all duration-300 flex items-center">
-        <i class="fab fa-whatsapp mr-2"></i> Contáctanos
-      </a>
-    </div>
-    <!-- Botón para mobile -->
-    <div class="md:hidden">
-      <button id="menu-toggle" class="text-blue-800 focus:outline-none">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </div>
-  </div>
-  <!-- Menú para mobile -->
-  <div id="mobile-menu" class="mobile-menu md:hidden bg-white w-full">
-    <div class="px-2 pt-2 pb-4 space-y-1">
-      <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Inicio</a>
-      <a href="#servicios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Servicios</a>
-      <a href="#beneficios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Beneficios</a>
-      <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contacto</a>
-      <a href="https://wa.me/50494572918" class="block bg-green-500 text-white px-3 py-2 rounded-md text-center font-medium hover:bg-green-600">
-        <i class="fab fa-whatsapp mr-2"></i> WhatsApp
-      </a>
-    </div>
-  </div>
+<nav class="blog-nav">
+<div class="blog-nav-container">
+<div class="blog-nav-links">
+<a href="index.html">Home</a>
+<a href="blog/index.html">Blog</a>
+</div>
+</div>
+</nav>
+
+<nav class="bg-white py-4 px-6 shadow-md fixed top-0 w-full z-50" style="top: 40px;">
+<div class="container mx-auto flex justify-between items-center">
+<div class="flex items-center">
+<div class="text-2xl font-bold text-blue-800">DAWE <span class="text-green-600">HEALTHCARE</span></div>
+</div>
+<!-- Menú para desktop -->
+<div class="hidden md:block">
+<a href="#inicio" class="mx-3 hover:text-blue-700 nav-link">Inicio</a>
+<a href="#servicios" class="mx-3 hover:text-blue-700 nav-link">Servicios</a>
+<a href="#beneficios" class="mx-3 hover:text-blue-700 nav-link">Beneficios</a>
+<a href="#contacto" class="mx-3 hover:text-blue-700 nav-link">Contacto</a>
+</div>
+<div class="hidden md:block">
+<a href="https://wa.me/50494572918" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full transition-all duration-300 flex items-center">
+<i class="fab fa-whatsapp mr-2"></i> Contáctanos
+</a>
+</div>
+<!-- Botón para mobile -->
+<div class="md:hidden">
+<button id="menu-toggle" class="text-blue-800 focus:outline-none">
+<i class="fas fa-bars text-2xl"></i>
+</button>
+</div>
+</div>
+<!-- Menú para mobile -->
+<div id="mobile-menu" class="mobile-menu md:hidden bg-white w-full">
+<div class="px-2 pt-2 pb-4 space-y-1">
+<a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Inicio</a>
+<a href="#servicios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Servicios</a>
+<a href="#beneficios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Beneficios</a>
+<a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contacto</a>
+<a href="https://wa.me/50494572918" class="block bg-green-500 text-white px-3 py-2 rounded-md text-center font-medium hover:bg-green-600">
+<i class="fab fa-whatsapp mr-2"></i> WhatsApp
+</a>
+</div>
+</div>
 </nav>
 
 <!-- Sección Hero -->
-<section id="inicio" class="hero-bg pt-32 pb-20 text-white">
-  <div class="container mx-auto px-6">
-    <div class="md:flex items-center">
-      <div class="md:w-1/2 mb-8 md:mb-0">
-        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">La atención hospitalaria que necesitas, en la comodidad de tu hogar</h1>
-        <p class="text-xl mb-8">Nuestro equipo médico profesional lleva servicios hospitalarios completos directamente a tu casa en San Pedro Sula</p>
-        <div class="flex flex-wrap">
-          <a href="https://wa.me/50494572918" class="cta-button text-white px-8 py-3 rounded-full font-semibold text-lg mr-4 mb-3 md:mb-0 flex items-center">
-            <i class="fab fa-whatsapp mr-2 text-2xl"></i> Contactar por WhatsApp
-          </a>
-          <a href="#beneficios" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300">
-            Conoce más
-          </a>
-        </div>
-      </div>
-      <div class="md:w-1/2 flex justify-center">
-        <img src="https://www.sehogarelsalvador.com/blog/wp-content/uploads/2018/11/enfermerosoncologico.jpg" alt="Hospitalización Domiciliaria" class="rounded-lg shadow-2xl max-w-full h-auto" style="max-height: 400px;">
-      </div>
-    </div>
-  </div>
+<section id="inicio" class="hero-bg pt-32 pb-20 text-white" style="margin-top: 40px;">
+<div class="container mx-auto px-6">
+<div class="md:flex items-center">
+<div class="md:w-1/2 mb-8 md:mb-0">
+<h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">La atención hospitalaria que necesitas, en la comodidad de tu hogar</h1>
+<p class="text-xl mb-8">Nuestro equipo médico profesional lleva servicios hospitalarios completos directamente a tu casa en San Pedro Sula</p>
+<div class="flex flex-wrap">
+<a href="https://wa.me/50494572918" class="cta-button text-white px-8 py-3 rounded-full font-semibold text-lg mr-4 mb-3 md:mb-0 flex items-center">
+<i class="fab fa-whatsapp mr-2 text-2xl"></i> Contactar por WhatsApp
+</a>
+<a href="#beneficios" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300">
+Conoce más
+</a>
+</div>
+</div>
+<div class="md:w-1/2 flex justify-center">
+<img src="https://www.sehogarelsalvador.com/blog/wp-content/uploads/2018/11/enfermerosoncologico.jpg" alt="Hospitalización Domiciliaria" class="rounded-lg shadow-2xl max-w-full h-auto" style="max-height: 400px;">
+</div>
+</div>
+</div>
 </section>
 
 <!-- Sección de Beneficios -->
 <section id="beneficios" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Por qué elegir la hospitalización domiciliaria?</h2>
-      <p class="text-lg text-gray-600 mb-6">Beneficios que marcan la diferencia en la recuperación de los pacientes</p>
-      <div class="section-divider"></div>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
-        <div class="text-center mb-4">
-          <i class="fas fa-shield-virus benefit-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Menor riesgo de infección</h3>
-        <p class="text-gray-600">Se elimina prácticamente el riesgo de infecciones nosocomiales (adquiridas en hospitales), protegiendo especialmente a pacientes vulnerables.</p>
-      </div>
-      <div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
-        <div class="text-center mb-4">
-          <i class="fas fa-heart benefit-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Mayor bienestar emocional</h3>
-        <p class="text-gray-600">La recuperación en un entorno familiar reduce el estrés y la ansiedad, factores clave para una más rápida recuperación.</p>
-      </div>
-      <div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
-        <div class="text-center mb-4">
-          <i class="fas fa-coins benefit-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Ahorro del 40-60%</h3>
-        <p class="text-gray-600">Comparado con la hospitalización tradicional, nuestro servicio representa un ahorro significativo manteniendo la misma calidad de atención.</p>
-      </div>
-      <div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
-        <div class="text-center mb-4">
-          <i class="fas fa-user-md benefit-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Atención personalizada</h3>
-        <p class="text-gray-600">Nuestro personal médico y de enfermería se dedica exclusivamente a un número limitado de pacientes, ofreciendo una atención más directa.</p>
-      </div>
-      <div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
-        <div class="text-center mb-4">
-          <i class="fas fa-clock benefit-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Disponibilidad 24/7</h3>
-        <p class="text-gray-600">Contamos con soporte continuo a través de WhatsApp y visitas programadas según la necesidad de cada paciente.</p>
-      </div>
-      <div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
-        <div class="text-center mb-4">
-          <i class="fas fa-home-user benefit-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Comodidad del hogar</h3>
-        <p class="text-gray-600">El paciente mantiene sus rutinas, come su comida preferida y está rodeado de sus seres queridos, factores importantes para su recuperación.</p>
-      </div>
-    </div>
-  </div>
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">¿Por qué elegir la hospitalización domiciliaria?</h2>
+<p class="text-lg text-gray-600 mb-6">Beneficios que marcan la diferencia en la recuperación de los pacientes</p>
+<div class="section-divider"></div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
+<div class="text-center mb-4">
+<i class="fas fa-shield-virus benefit-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Menor riesgo de infección</h3>
+<p class="text-gray-600">Se elimina prácticamente el riesgo de infecciones nosocomiales (adquiridas en hospitales), protegiendo especialmente a pacientes vulnerables.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
+<div class="text-center mb-4">
+<i class="fas fa-heart benefit-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Mayor bienestar emocional</h3>
+<p class="text-gray-600">La recuperación en un entorno familiar reduce el estrés y la ansiedad, factores clave para una más rápida recuperación.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
+<div class="text-center mb-4">
+<i class="fas fa-coins benefit-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Ahorro del 40-60%</h3>
+<p class="text-gray-600">Comparado con la hospitalización tradicional, nuestro servicio representa un ahorro significativo manteniendo la misma calidad de atención.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
+<div class="text-center mb-4">
+<i class="fas fa-user-md benefit-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Atención personalizada</h3>
+<p class="text-gray-600">Nuestro personal médico y de enfermería se dedica exclusivamente a un número limitado de pacientes, ofreciendo una atención más directa.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
+<div class="text-center mb-4">
+<i class="fas fa-clock benefit-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Disponibilidad 24/7</h3>
+<p class="text-gray-600">Contamos con soporte continuo a través de WhatsApp y visitas programadas según la necesidad de cada paciente.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg">
+<div class="text-center mb-4">
+<i class="fas fa-house-user benefit-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Comodidad del hogar</h3>
+<p class="text-gray-600">El paciente mantiene sus rutinas, come su comida preferida y está rodeado de sus seres queridos, factores importantes para su recuperación.</p>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Nueva Sección: Ahorro en Traslados -->
 <section class="py-20 bg-blue-50">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Evita traslados difíciles y costosos</h2>
-      <p class="text-lg text-gray-600 mb-6">Especialmente beneficioso para adultos mayores y pacientes con movilidad reducida</p>
-      <div class="section-divider"></div>
-    </div>
-    <div class="md:flex items-center">
-      <div class="md:w-1/2 mb-8 md:mb-0">
-        <img src="https://primarymed.com/wp-content/uploads/2021/10/Transporte-de-la-Puerta-al-Doctor-para-Adultos-Mayores-Primary-Med.jpg" alt="Transporte de pacientes adultos mayores" class="rounded-lg shadow-xl mx-auto" style="max-height: 350px;">
-      </div>
-      <div class="md:w-1/2 md:pl-12">
-        <div class="mb-6">
-          <div class="flex items-center mb-3">
-            <span class="step-number">1</span>
-            <h3 class="text-xl font-bold">Eliminación de traslados riesgosos</h3>
-          </div>
-          <p class="text-gray-600 pl-12">Movilizar a un paciente, especialmente adultos mayores, puede representar un riesgo para su salud y aumentar su incomodidad.</p>
-        </div>
-        <div class="mb-6">
-          <div class="flex items-center mb-3">
-            <span class="step-number">2</span>
-            <h3 class="text-xl font-bold">Ahorro en ambulancias y transporte</h3>
-          </div>
-          <p class="text-gray-600 pl-12">El costo de ambulancias y transporte médico especializado es elevado y no siempre está cubierto por seguros médicos.</p>
-        </div>
-        <div class="mb-6">
-          <div class="flex items-center mb-3">
-            <span class="step-number">3</span>
-            <h3 class="text-xl font-bold">Reducción del estrés familiar</h3>
-          </div>
-          <p class="text-gray-600 pl-12">Las familias se evitan la logística complicada de coordinar traslados frecuentes al hospital para tratamientos y seguimientos.</p>
-        </div>
-        <div>
-          <div class="flex items-center mb-3">
-            <span class="step-number">4</span>
-            <h3 class="text-xl font-bold">Permanencia en entorno familiar</h3>
-          </div>
-          <p class="text-gray-600 pl-12">Los pacientes mayores sufren menos desorientación y confusión al permanecer en su ambiente conocido, acelerando su recuperación.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Evita traslados difíciles y costosos</h2>
+<p class="text-lg text-gray-600 mb-6">Especialmente beneficioso para adultos mayores y pacientes con movilidad reducida</p>
+<div class="section-divider"></div>
+</div>
+<div class="md:flex items-center">
+<div class="md:w-1/2 mb-8 md:mb-0">
+<img src="https://primarymed.com/wp-content/uploads/2021/10/Transporte-de-la-Puerta-al-Doctor-para-Adultos-Mayores-Primary-Med.jpg" alt="Transporte de pacientes adultos mayores" class="rounded-lg shadow-xl mx-auto" style="max-height: 350px;">
+</div>
+<div class="md:w-1/2 md:pl-12">
+<div class="mb-6">
+<div class="flex items-center mb-3">
+<span class="step-number">1</span>
+<h3 class="text-xl font-bold">Eliminación de traslados riesgosos</h3>
+</div>
+<p class="text-gray-600 pl-12">Movilizar a un paciente, especialmente adultos mayores, puede representar un riesgo para su salud y aumentar su incomodidad.</p>
+</div>
+<div class="mb-6">
+<div class="flex items-center mb-3">
+<span class="step-number">2</span>
+<h3 class="text-xl font-bold">Ahorro en ambulancias y transporte</h3>
+</div>
+<p class="text-gray-600 pl-12">El costo de ambulancias y transporte médico especializado es elevado y no siempre está cubierto por seguros médicos.</p>
+</div>
+<div class="mb-6">
+<div class="flex items-center mb-3">
+<span class="step-number">3</span>
+<h3 class="text-xl font-bold">Reducción del estrés familiar</h3>
+</div>
+<p class="text-gray-600 pl-12">Las familias se evitan la logística complicada de coordinar traslados frecuentes al hospital para tratamientos y seguimientos.</p>
+</div>
+<div>
+<div class="flex items-center mb-3">
+<span class="step-number">4</span>
+<h3 class="text-xl font-bold">Permanencia en entorno familiar</h3>
+</div>
+<p class="text-gray-600 pl-12">Los pacientes mayores sufren menos desorientación y confusión al permanecer en su ambiente conocido, acelerando su recuperación.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Sección de Servicios -->
 <section id="servicios" class="py-20">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestros Servicios</h2>
-      <p class="text-lg text-gray-600 mb-6">Llevamos la experiencia hospitalaria a la comodidad de tu hogar</p>
-      <div class="section-divider"></div>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
-        <div class="text-center mb-4">
-          <i class="fas fa-procedures service-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Hospitalización para enfermedades crónicas</h3>
-        <p class="text-gray-600">Atención completa para pacientes con enfermedades crónicas que requieren monitoreo constante y cuidados médicos especializados.</p>
-      </div>
-      <div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
-        <div class="text-center mb-4">
-          <i class="fas fa-band-aid service-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Curaciones avanzadas</h3>
-        <p class="text-gray-600">Tratamiento y seguimiento de heridas complejas, úlceras por presión, heridas quirúrgicas y otros procedimientos que requieren cuidado profesional.</p>
-      </div>
-      <div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
-        <div class="text-center mb-4">
-          <i class="fas fa-syringe service-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Administración de medicamentos</h3>
-        <p class="text-gray-600">Administración profesional de medicamentos intravenosos, subcutáneos y otros tratamientos que requieren preparación y aplicación especializada.</p>
-      </div>
-      <div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
-        <div class="text-center mb-4">
-          <i class="fas fa-user-nurse service-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Atención de enfermería especializada</h3>
-        <p class="text-gray-600">Cuidados de enfermería profesionales 24/7 según las necesidades de cada paciente, incluyendo monitoreo de signos vitales y estado general.</p>
-      </div>
-      <div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
-        <div class="text-center mb-4">
-          <i class="fas fa-stethoscope service-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Visitas médicas domiciliarias</h3>
-        <p class="text-gray-600">Evaluación médica periódica para seguimiento de la evolución del paciente y ajuste de tratamientos según sea necesario.</p>
-      </div>
-      <div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
-        <div class="text-center mb-4">
-          <i class="fas fa-comment-medical service-icon"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3 text-center">Soporte continuo por WhatsApp</h3>
-        <p class="text-gray-600">Comunicación constante con nuestro equipo médico para resolver dudas, reportar cambios o solicitar asistencia inmediata.</p>
-      </div>
-    </div>
-  </div>
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestros Servicios</h2>
+<p class="text-lg text-gray-600 mb-6">Llevamos la experiencia hospitalaria a la comodidad de tu hogar</p>
+<div class="section-divider"></div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
+<div class="text-center mb-4">
+<i class="fas fa-procedures service-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Hospitalización para enfermedades crónicas</h3>
+<p class="text-gray-600">Atención completa para pacientes con enfermedades crónicas que requieren monitoreo constante y cuidados médicos especializados.</p>
+</div>
+<div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
+<div class="text-center mb-4">
+<i class="fas fa-band-aid service-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Curaciones avanzadas</h3>
+<p class="text-gray-600">Tratamiento y seguimiento de heridas complejas, úlceras por presión, heridas quirúrgicas y otros procedimientos que requieren cuidado profesional.</p>
+</div>
+<div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
+<div class="text-center mb-4">
+<i class="fas fa-syringe service-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Administración de medicamentos</h3>
+<p class="text-gray-600">Administración profesional de medicamentos intravenosos, subcutáneos y otros tratamientos que requieren preparación y aplicación especializada.</p>
+</div>
+<div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
+<div class="text-center mb-4">
+<i class="fas fa-user-nurse service-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Atención de enfermería especializada</h3>
+<p class="text-gray-600">Cuidados de enfermería profesionales 24/7 según las necesidades de cada paciente, incluyendo monitoreo de signos vitales y estado general.</p>
+</div>
+<div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
+<div class="text-center mb-4">
+<i class="fas fa-stethoscope service-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Visitas médicas domiciliarias</h3>
+<p class="text-gray-600">Evaluación médica periódica para seguimiento de la evolución del paciente y ajuste de tratamientos según sea necesario.</p>
+</div>
+<div class="service-card bg-white p-6 rounded-lg shadow-md transition-all duration-300">
+<div class="text-center mb-4">
+<i class="fas fa-comment-medical service-icon"></i>
+</div>
+<h3 class="text-xl font-bold mb-3 text-center">Soporte continuo por WhatsApp</h3>
+<p class="text-gray-600">Comunicación constante con nuestro equipo médico para resolver dudas, reportar cambios o solicitar asistencia inmediata.</p>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Sección: Coordinación con Especialistas -->
 <section class="py-20 bg-white">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Coordinación remota con especialistas</h2>
-      <p class="text-lg text-gray-600 mb-6">Nuestros médicos generales son las manos y ojos de los especialistas en tu hogar</p>
-      <div class="section-divider"></div>
-    </div>
-    <div class="md:flex items-center">
-      <div class="md:w-1/2 mb-8 md:mb-0">
-        <div class="bg-blue-800 text-white p-8 rounded-lg shadow-lg relative">
-          <div class="absolute top-0 right-0 bg-green-500 text-white py-1 px-4 rounded-bl-lg rounded-tr-lg text-sm font-bold">
-            INNOVACIÓN
-          </div>
-          <h3 class="text-2xl font-bold mb-4">Modelo de atención integrado</h3>
-          <p class="mb-6">Combinamos la presencia física de profesionales en tu hogar con la supervisión remota de médicos especialistas para garantizar la mejor atención.</p>
-          <ul class="space-y-3">
-            <li class="flex items-start">
-              <i class="fas fa-check-circle mr-2 mt-1 text-green-400"></i>
-              <span>Médicos domiciliarios altamente capacitados que realizan evaluaciones detalladas</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle mr-2 mt-1 text-green-400"></i>
-              <span>Transmisión de datos y hallazgos clínicos en tiempo real a especialistas</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle mr-2 mt-1 text-green-400"></i>
-              <span>Especialistas que analizan la información y ajustan los tratamientos remotamente</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle mr-2 mt-1 text-green-400"></i>
-              <span>Tecnología médica portátil avanzada para realizar diagnósticos precisos</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="md:w-1/2 md:pl-12">
-        <h3 class="text-2xl font-bold mb-6 text-blue-800">¿Cómo funciona nuestra coordinación con especialistas?</h3>
-        <div class="mb-6">
-          <div class="flex items-start mb-2">
-            <div class="bg-blue-100 rounded-full p-2 mr-4">
-              <i class="fas fa-user-md text-blue-800"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-lg">Evaluación inicial</h4>
-              <p class="text-gray-600">Nuestros médicos domiciliarios realizan una evaluación completa utilizando equipos de diagnóstico modernos.</p>
-            </div>
-          </div>
-        </div>
-        <div class="mb-6">
-          <div class="flex items-start mb-2">
-            <div class="bg-blue-100 rounded-full p-2 mr-4">
-              <i class="fas fa-laptop-medical text-blue-800"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-lg">Comunicación con especialistas</h4>
-              <p class="text-gray-600">La información clínica, resultados y mediciones se envían a nuestros especialistas para su análisis.</p>
-            </div>
-          </div>
-        </div>
-        <div class="mb-6">
-          <div class="flex items-start mb-2">
-            <div class="bg-blue-100 rounded-full p-2 mr-4">
-              <i class="fas fa-comments text-blue-800"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-lg">Interconsulta médica</h4>
-              <p class="text-gray-600">Los especialistas y médicos domiciliarios discuten el caso y definen el mejor plan de tratamiento.</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="flex items-start mb-2">
-            <div class="bg-blue-100 rounded-full p-2 mr-4">
-              <i class="fas fa-clipboard-check text-blue-800"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-lg">Seguimiento continuado</h4>
-              <p class="text-gray-600">Monitorización constante del paciente con ajustes de tratamiento según su evolución.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Coordinación remota con especialistas</h2>
+<p class="text-lg text-gray-600 mb-6">Nuestros médicos generales son las manos y ojos de los especialistas en tu hogar</p>
+<div class="section-divider"></div>
+</div>
+<div class="md:flex items-center">
+<div class="md:w-1/2 mb-8 md:mb-0">
+<div class="bg-blue-800 text-white p-8 rounded-lg shadow-lg relative">
+<div class="absolute top-0 right-0 bg-green-500 text-white py-1 px-4 rounded-bl-lg rounded-tr-lg text-sm font-bold">
+INNOVACIÓN
+</div>
+<h3 class="text-2xl font-bold mb-4">Modelo de atención integrado</h3>
+<p class="mb-6">Combinamos la presencia física de profesionales en tu hogar con la supervisión remota de médicos especialistas para garantizar la mejor atención.</p>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="fas fa-check-circle mr-2 mt-1 text-green-400"></i>
+<span>Médicos domiciliarios altamente capacitados que realizan evaluaciones detalladas</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle mr-2 mt-1 text-green-400"></i>
+<span>Transmisión de datos y hallazgos clínicos en tiempo real a especialistas</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle mr-2 mt-1 text-green-400"></i>
+<span>Especialistas que analizan la información y ajustan los tratamientos remotamente</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle mr-2 mt-1 text-green-400"></i>
+<span>Tecnología médica portátil avanzada para realizar diagnósticos precisos</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="md:w-1/2 md:pl-12">
+<h3 class="text-2xl font-bold mb-6 text-blue-800">¿Cómo funciona nuestra coordinación con especialistas?</h3>
+<div class="mb-6">
+<div class="flex items-start mb-2">
+<div class="bg-blue-100 rounded-full p-2 mr-4">
+<i class="fas fa-user-md text-blue-800"></i>
+</div>
+<div>
+<h4 class="font-bold text-lg">Evaluación inicial</h4>
+<p class="text-gray-600">Nuestros médicos domiciliarios realizan una evaluación completa utilizando equipos de diagnóstico modernos.</p>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<div class="flex items-start mb-2">
+<div class="bg-blue-100 rounded-full p-2 mr-4">
+<i class="fas fa-laptop-medical text-blue-800"></i>
+</div>
+<div>
+<h4 class="font-bold text-lg">Comunicación con especialistas</h4>
+<p class="text-gray-600">La información clínica, resultados y mediciones se envían a nuestros especialistas para su análisis.</p>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<div class="flex items-start mb-2">
+<div class="bg-blue-100 rounded-full p-2 mr-4">
+<i class="fas fa-comments text-blue-800"></i>
+</div>
+<div>
+<h4 class="font-bold text-lg">Interconsulta médica</h4>
+<p class="text-gray-600">Los especialistas y médicos domiciliarios discuten el caso y definen el mejor plan de tratamiento.</p>
+</div>
+</div>
+</div>
+<div>
+<div class="flex items-start mb-2">
+<div class="bg-blue-100 rounded-full p-2 mr-4">
+<i class="fas fa-clipboard-check text-blue-800"></i>
+</div>
+<div>
+<h4 class="font-bold text-lg">Seguimiento continuado</h4>
+<p class="text-gray-600">Monitorización constante del paciente con ajustes de tratamiento según su evolución.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- Sección Condiciones Comunes Tratadas (Actualizada) -->
+<!-- Sección Patologías Comunes -->
 <section class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Condiciones más comunes que atendemos</h2>
-      <p class="text-lg text-gray-600 mb-6">Consulta con tu médico si tu condición es elegible para hospitalización domiciliaria</p>
-      <div class="section-divider"></div>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-          <i class="fas fa-hands-helping text-blue-600 text-2xl"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-center">Cuidados paliativos</h3>
-        <p class="text-gray-600 text-center">Atención integral para pacientes con enfermedades avanzadas, enfocada en aliviar el dolor y mejorar la calidad de vida.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-          <i class="fas fa-heartbeat text-blue-600 text-2xl"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-center">Pacientes con enfermedades terminales</h3>
-        <p class="text-gray-600 text-center">Acompañamiento médico y emocional para pacientes en etapas avanzadas de enfermedades incurables.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-          <i class="fas fa-liver text-blue-600 text-2xl"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-center">Cirrosis hepática</h3>
-        <p class="text-gray-600 text-center">Manejo de complicaciones como ascitis, encefalopatía hepática y otras manifestaciones de la enfermedad hepática crónica.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-          <i class="fas fa-kidneys text-blue-600 text-2xl"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-center">Insuficiencia renal crónica</h3>
-        <p class="text-gray-600 text-center">Control y tratamiento de pacientes con enfermedad renal en etapas avanzadas que no requieren diálisis inmediata.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-          <i class="fas fa-heart text-blue-600 text-2xl"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-center">Insuficiencia cardíaca</h3>
-        <p class="text-gray-600 text-center">Control y estabilización de pacientes con insuficiencia cardíaca congestiva descompensada.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
-          <i class="fas fa-lungs text-blue-600 text-2xl"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-2 text-center">EPOC (Enfermedad Pulmonar Obstructiva Crónica)</h3>
-        <p class="text-gray-600 text-center">Manejo de exacerbaciones y tratamiento de mantenimiento para pacientes con EPOC avanzado.</p>
-      </div>
-    </div>
-    <div class="mt-12 text-center">
-      <p class="text-lg mb-6">¿Tienes alguna de estas condiciones o conoces a alguien que podría beneficiarse de nuestro servicio?</p>
-      <a href="https://wa.me/50494572918" class="cta-button text-white px-8 py-3 rounded-full font-semibold text-lg flex items-center mx-auto justify-center" style="max-width: 300px;">
-        <i class="fab fa-whatsapp mr-2 text-2xl"></i> Consulta tu caso
-      </a>
-    </div>
-  </div>
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Patologías más comunes tratadas</h2>
+<p class="text-lg text-gray-600 mb-6">Consulta con tu médico si tu condición es elegible para hospitalización domiciliaria</p>
+<div class="section-divider"></div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
+<div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+<i class="fas fa-lungs text-blue-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2 text-center">Infecciones respiratorias</h3>
+<p class="text-gray-600 text-center">Neumonías, bronquitis y otras infecciones que requieren oxigenoterapia y antibióticos intravenosos.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
+<div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+<i class="fas fa-bacterium text-blue-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2 text-center">Infecciones urinarias</h3>
+<p class="text-gray-600 text-center">Infecciones recurrentes o complicadas que necesitan antibioterapia parenteral y monitorización.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
+<div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+<i class="fas fa-heartbeat text-blue-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2 text-center">Insuficiencia cardíaca</h3>
+<p class="text-gray-600 text-center">Control y estabilización de pacientes con insuficiencia cardíaca congestiva descompensada.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
+<div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+<i class="fas fa-head-side-mask text-blue-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2 text-center">COVID-19</h3>
+<p class="text-gray-600 text-center">Seguimiento y tratamiento de casos moderados que requieren monitorización pero no ventilación mecánica.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
+<div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+<i class="fas fa-allergies text-blue-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2 text-center">Enfermedades de la piel</h3>
+<p class="text-gray-600 text-center">Tratamiento de infecciones cutáneas, úlceras y otras patologías que requieren cuidados especializados.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
+<div class="rounded-full bg-blue-100 w-16 h-16 flex items-center justify-center mx-auto mb-4">
+<i class="fas fa-kidneys text-blue-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2 text-center">Lesiones renales agudas</h3>
+<p class="text-gray-600 text-center">Monitorización y tratamiento de afecciones renales que no requieren diálisis inmediata.</p>
+</div>
+</div>
+<div class="mt-12 text-center">
+<p class="text-lg mb-6">¿Tienes alguna de estas condiciones o conoces a alguien que podría beneficiarse de nuestro servicio?</p>
+<a href="https://wa.me/50494572918" class="cta-button text-white px-8 py-3 rounded-full font-semibold text-lg flex items-center mx-auto justify-center" style="max-width: 300px;">
+<i class="fab fa-whatsapp mr-2 text-2xl"></i> Consulta tu caso
+</a>
+</div>
+</div>
+</section>
+
+<!-- Sección Blog -->
+<section class="blog-section">
+<div class="blog-container">
+<div class="blog-header">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestro Blog</h2>
+<p class="text-lg text-gray-600 mb-6">Consejos, noticias y artículos sobre salud y hospitalización domiciliaria</p>
+<div class="section-divider"></div>
+</div>
+<div class="blog-grid">
+<!-- Artículo 1 -->
+<div class="blog-card">
+<img src="https://www.sehogarelsalvador.com/blog/wp-content/uploads/2018/11/enfermerosoncologico.jpg" alt="Cuidados en casa" class="blog-image">
+<div class="blog-content">
+<div class="blog-date">15 de Junio, 2023</div>
+<h3 class="blog-title">Beneficios de la hospitalización domiciliaria para adultos mayores</h3>
+<p class="blog-excerpt">Descubre cómo la atención médica en casa puede mejorar la calidad de vida y recuperación de pacientes de la tercera edad.</p>
+<a href="blog/beneficios-adultos-mayores.html" class="blog-read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+<!-- Artículo 2 -->
+<div class="blog-card">
+<img src="https://www.avera.org/app/files/public/82111/home-health-visit-with-elderly-patient.jpg" alt="Atención médica en casa" class="blog-image">
+<div class="blog-content">
+<div class="blog-date">28 de Mayo, 2023</div>
+<h3 class="blog-title">Cómo preparar tu hogar para recibir atención médica</h3>
+<p class="blog-excerpt">Guía práctica para adaptar tu espacio y crear un ambiente seguro y cómodo para la atención médica domiciliaria.</p>
+<a href="blog/preparar-hogar-atencion-medica.html" class="blog-read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+<!-- Artículo 3 -->
+<div class="blog-card">
+<img src="https://primarymed.com/wp-content/uploads/2021/10/Transporte-de-la-Puerta-al-Doctor-para-Adultos-Mayores-Primary-Med.jpg" alt="Cuidados postoperatorios" class="blog-image">
+<div class="blog-content">
+<div class="blog-date">10 de Abril, 2023</div>
+<h3 class="blog-title">Cuidados postoperatorios en casa: Lo que necesitas saber</h3>
+<p class="blog-excerpt">Todo sobre cómo manejar la recuperación después de una cirugía desde la comodidad de tu hogar con ayuda profesional.</p>
+<a href="blog/cuidados-postoperatorios.html" class="blog-read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="blog-cta">
+<a href="blog/index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold text-lg inline-flex items-center">
+Ver todos los artículos <i class="fas fa-arrow-right ml-2"></i>
+</a>
+</div>
+</div>
 </section>
 
 <!-- Sección Testimonios -->
 <section class="py-20">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Lo que dicen nuestros pacientes</h2>
-      <p class="text-lg text-gray-600 mb-6">Experiencias reales de familias que confían en DAWE HEALTHCARE</p>
-      <div class="section-divider"></div>
-    </div>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="testimonial p-8 rounded-lg">
-        <div class="flex items-center mb-4">
-          <div class="text-yellow-500 mr-2">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <span class="font-bold">5.0</span>
-        </div>
-        <p class="italic mb-6">"Mi madre de 78 años necesitaba cuidados después de una neumonía complicada. Con DAWE HEALTHCARE evitamos el estrés de traslados diarios al hospital y recibió atención médica profesional sin moverse de casa. Su recuperación fue excelente y más rápida de lo esperado."</p>
-        <div class="flex items-center">
-          <h4 class="font-bold">Carlos Martínez</h4>
-          <span class="mx-2">-</span>
-          <span>Hijo de paciente</span>
-        </div>
-      </div>
-      <div class="testimonial p-8 rounded-lg">
-        <div class="flex items-center mb-4">
-          <div class="text-yellow-500 mr-2">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <span class="font-bold">5.0</span>
-        </div>
-        <p class="italic mb-6">"Como médico, tenía altas expectativas para el cuidado de mi esposo con COVID-19. El equipo de DAWE superó todas ellas. La coordinación entre médicos, enfermeros y especialistas fue impecable. Ahorramos mucho en comparación con una hospitalización tradicional."</p>
-        <div class="flex items-center">
-          <h4 class="font-bold">Dra. Alejandra Romero</h4>
-          <span class="mx-2">-</span>
-          <span>Esposa de paciente</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Lo que dicen nuestros pacientes</h2>
+<p class="text-lg text-gray-600 mb-6">Experiencias reales de familias que confían en DAWE HEALTHCARE</p>
+<div class="section-divider"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="testimonial p-8 rounded-lg">
+<div class="flex items-center mb-4">
+<div class="text-yellow-500 mr-2">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<span class="font-bold">5.0</span>
+</div>
+<p class="italic mb-6">"Mi madre de 78 años necesitaba cuidados después de una neumonía complicada. Con DAWE HEALTHCARE evitamos el estrés de traslados diarios al hospital y recibió atención médica profesional sin moverse de casa. Su recuperación fue excelente y más rápida de lo esperado."</p>
+<div class="flex items-center">
+<h4 class="font-bold">Carlos Martínez</h4>
+<span class="mx-2">-</span>
+<span>Hijo de paciente</span>
+</div>
+</div>
+<div class="testimonial p-8 rounded-lg">
+<div class="flex items-center mb-4">
+<div class="text-yellow-500 mr-2">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<span class="font-bold">5.0</span>
+</div>
+<p class="italic mb-6">"Como médico, tenía altas expectativas para el cuidado de mi esposo con COVID-19. El equipo de DAWE superó todas ellas. La coordinación entre médicos, enfermeros y especialistas fue impecable. Ahorramos mucho en comparación con una hospitalización tradicional."</p>
+<div class="flex items-center">
+<h4 class="font-bold">Dra. Alejandra Romero</h4>
+<span class="mx-2">-</span>
+<span>Esposa de paciente</span>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Sección CTA Final -->
 <section id="contacto" class="py-16 blue-gradient text-white">
-  <div class="container mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Listo para recibir atención hospitalaria en la comodidad de tu hogar?</h2>
-    <p class="text-xl mb-8 max-w-3xl mx-auto">Contáctanos hoy mismo a través de WhatsApp y uno de nuestros profesionales evaluará tu caso para determinar si eres candidato para hospitalización domiciliaria.</p>
-    <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8">
-      <a href="https://wa.me/50494572918" class="cta-button text-white px-10 py-4 rounded-full font-semibold text-xl flex items-center justify-center w-full md:w-auto">
-        <i class="fab fa-whatsapp mr-3 text-3xl"></i> 
-        <div>
-          <div>Contáctanos por WhatsApp</div>
-          <div class="text-sm font-normal">+504 9457-2918</div>
-        </div>
-      </a>
-      <a href="https://bzyzvvnm.genspark.space/" target="_blank" class="bg-white text-blue-800 hover:bg-blue-100 px-10 py-4 rounded-full font-semibold text-xl transition-all duration-300 flex items-center justify-center w-full md:w-auto">
-        <i class="fas fa-file-pdf mr-2"></i> Descargar guía informativa
-      </a>
-    </div>
-  </div>
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">¿Listo para recibir atención hospitalaria en la comodidad de tu hogar?</h2>
+<p class="text-xl mb-8 max-w-3xl mx-auto">Contáctanos hoy mismo a través de WhatsApp y uno de nuestros profesionales evaluará tu caso para determinar si eres candidato para hospitalización domiciliaria.</p>
+<div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8">
+<a href="https://wa.me/50494572918" class="cta-button text-white px-10 py-4 rounded-full font-semibold text-xl flex items-center justify-center w-full md:w-auto">
+<i class="fab fa-whatsapp mr-3 text-3xl"></i> 
+<div>
+<div>Contáctanos por WhatsApp</div>
+<div class="text-sm font-normal">+504 9457-2918</div>
+</div>
+</a>
+<a href="https://bzyzvvnm.genspark.space/" target="_blank" class="bg-white text-blue-800 hover:bg-blue-100 px-10 py-4 rounded-full font-semibold text-xl transition-all duration-300 flex items-center justify-center w-full md:w-auto">
+<i class="fas fa-file-pdf mr-2"></i> Descargar guía informativa
+</a>
+</div>
+</div>
 </section>
 
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-12">
-  <div class="container mx-auto px-6">
-    <div class="md:flex justify-between items-start">
-      <div class="mb-8 md:mb-0">
-        <div class="text-2xl font-bold mb-4">DAWE <span class="text-green-400">HEALTHCARE</span></div>
-        <p class="max-w-xs text-gray-400">"Hospital virtual" especializado en hospitalización domiciliaria para pacientes con enfermedades crónicas o que necesitan curaciones complejas.</p>
-      </div>
-      <div class="mb-8 md:mb-0">
-        <h3 class="text-lg font-bold mb-4">Contacto</h3>
-        <ul class="space-y-2 text-gray-400">
-          <li class="flex items-center">
-            <i class="fab fa-whatsapp mr-2"></i> +504 9457-2918
-          </li>
-          <li>San Pedro Sula, Honduras</li>
-          <li>Casco urbano de la ciudad</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-lg font-bold mb-4">Horarios</h3>
-        <ul class="space-y-2 text-gray-400">
-          <li>Atención 24 horas</li>
-          <li>7 días a la semana</li>
-          <li>Incluyendo feriados</li>
-        </ul>
-      </div>
-    </div>
-    <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-      <p class="text-gray-500 mb-4 md:mb-0">&copy; 2025 DAWE HEALTHCARE. Todos los derechos reservados.</p>
-      <div class="flex space-x-4">
-        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+<div class="container mx-auto px-6">
+<div class="md:flex justify-between items-start">
+<div class="mb-8 md:mb-0">
+<div class="text-2xl font-bold mb-4">DAWE <span class="text-green-400">HEALTHCARE</span></div>
+<p class="max-w-xs text-gray-400">"Hospital virtual" especializado en hospitalización domiciliaria para pacientes con enfermedades crónicas o que necesitan curaciones complejas.</p>
+</div>
+<div class="mb-8 md:mb-0">
+<h3 class="text-lg font-bold mb-4">Contacto</h3>
+<ul class="space-y-2 text-gray-400">
+<li class="flex items-center">
+<i class="fab fa-whatsapp mr-2"></i> +504 9457-2918
+</li>
+<li>San Pedro Sula, Honduras</li>
+<li>Casco urbano de la ciudad</li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Horarios</h3>
+<ul class="space-y-2 text-gray-400">
+<li>Atención 24 horas</li>
+<li>7 días a la semana</li>
+<li>Incluyendo feriados</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 mb-4 md:mb-0">&copy; 2025 DAWE HEALTHCARE. Todos los derechos reservados.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+<i class="fab fa-facebook-f"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+<i class="fab fa-twitter"></i>
+</a>
+</div>
+</div>
+</div>
 </footer>
 <!-- Botón flotante de WhatsApp -->
 <a href="https://wa.me/50494572918" class="floating-whatsapp bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-all duration-300">
-  <i class="fab fa-whatsapp text-3xl"></i>
+<i class="fab fa-whatsapp text-3xl"></i>
 </a>
 
 <!-- Script para el menú móvil -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  menuToggle.addEventListener('click', function() {
-    mobileMenu.classList.toggle('open');
-  });
-  // Cerrar menú al hacer clic en un enlace
-  const mobileLinks = document.querySelectorAll('#mobile-menu a');
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      mobileMenu.classList.remove('open');
-    });
-  });
-  // Smooth scrolling para todos los enlaces
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+menuToggle.addEventListener('click', function() {
+mobileMenu.classList.toggle('open');
+});
+// Cerrar menú al hacer clic en un enlace
+const mobileLinks = document.querySelectorAll('#mobile-menu a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.remove('open');
+});
+});
+// Smooth scrolling para todos los enlaces
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
 });
 </script>
 </body>
