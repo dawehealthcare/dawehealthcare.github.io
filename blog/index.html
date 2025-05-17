@@ -1,0 +1,414 @@
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | DAWE HEALTHCARE - Hospitalización Domiciliaria</title>
+<meta name="description" content="Artículos y consejos sobre hospitalización domiciliaria, cuidados médicos en casa y atención a pacientes crónicos en San Pedro Sula">
+<meta name="keywords" content="blog salud, hospitalización domiciliaria, cuidados en casa, enfermería a domicilio, atención médica">
+<link rel="canonical" href="https://dawehealthcare.github.io/blog/">
+<!-- Open Graph -->
+<meta property="og:title" content="Blog | DAWE Healthcare - Hospitalización Domiciliaria">
+<meta property="og:description" content="Artículos y consejos sobre atención médica en casa para pacientes en San Pedro Sula">
+<meta property="og:image" content="https://www.sehogarelsalvador.com/blog/wp-content/uploads/2018/11/enfermerosoncologico.jpg">
+<meta property="og:url" content="https://dawehealthcare.github.io/blog/">
+<meta property="og:type" content="website">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog | DAWE Healthcare - Hospitalización Domiciliaria">
+<meta name="twitter:description" content="Artículos sobre hospitalización en casa en San Pedro Sula">
+<meta name="twitter:image" content="https://www.sehogarelsalvador.com/blog/wp-content/uploads/2018/11/enfermerosoncologico.jpg">
+<!-- Stylesheets -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Montserrat', sans-serif;
+color: #333;
+line-height: 1.6;
+scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5 {
+font-family: 'Poppins', sans-serif;
+}
+.hero-bg {
+background-image: linear-gradient(rgba(0, 73, 123, 0.7), rgba(0, 73, 123, 0.7)), url('https://www.avera.org/app/files/public/82111/home-health-visit-with-elderly-patient.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+.blog-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0, 73, 123, 0.2);
+}
+.blue-gradient {
+background: linear-gradient(135deg, #0077B6, #023E8A);
+}
+.green-accent {
+color: #4CAF50;
+}
+.testimonial {
+background-color: #f8f9fa;
+border-left: 4px solid #0077B6;
+}
+.cta-button {
+background-color: #25D366;
+transition: all 0.3s ease;
+}
+.cta-button:hover {
+background-color: #128C7E;
+transform: scale(1.05);
+}
+.shadow-custom {
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.section-divider {
+height: 4px;
+width: 80px;
+background: linear-gradient(to right, #0077B6, #4CAF50);
+margin: 0 auto;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0077B6;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.mobile-menu {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease-out;
+}
+.mobile-menu.open {
+max-height: 500px;
+}
+.blog-header {
+background-color: #f8f9fa;
+padding: 20px 0;
+border-bottom: 1px solid #e5e7eb;
+}
+.blog-header-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+.blog-header-content {
+text-align: center;
+padding: 40px 0;
+}
+.blog-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 30px;
+}
+.blog-post-card {
+background: #ffffff;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-post-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.blog-post-image {
+width: 100%;
+height: 200px;
+object-fit: cover;
+}
+.blog-post-content {
+padding: 20px;
+}
+.blog-post-date {
+color: #6b7280;
+font-size: 14px;
+margin-bottom: 10px;
+}
+.blog-post-title {
+font-size: 20px;
+font-weight: 600;
+margin-bottom: 10px;
+color: #111827;
+}
+.blog-post-excerpt {
+color: #6b7280;
+margin-bottom: 15px;
+line-height: 1.5;
+}
+.blog-post-read-more {
+color: #0077B6;
+font-weight: 500;
+text-decoration: none;
+display: inline-flex;
+align-items: center;
+}
+.blog-post-read-more:hover {
+text-decoration: underline;
+}
+.blog-post-read-more i {
+margin-left: 5px;
+transition: transform 0.3s;
+}
+.blog-post-read-more:hover i {
+transform: translateX(3px);
+}
+.blog-pagination {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin-top: 40px;
+}
+.blog-page-link {
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+background-color: #f3f4f6;
+color: #4b5563;
+transition: all 0.3s;
+}
+.blog-page-link:hover, .blog-page-link.active {
+background-color: #0077B6;
+color: white;
+}
+.blog-sidebar {
+background-color: #f9fafb;
+padding: 20px;
+border-radius: 8px;
+}
+.blog-sidebar-title {
+font-size: 18px;
+font-weight: 600;
+margin-bottom: 15px;
+padding-bottom: 10px;
+border-bottom: 2px solid #e5e7eb;
+}
+.blog-sidebar-list {
+list-style: none;
+padding: 0;
+}
+.blog-sidebar-item {
+margin-bottom: 10px;
+}
+.blog-sidebar-link {
+color: #4b5563;
+transition: color 0.3s;
+}
+.blog-sidebar-link:hover {
+color: #0077B6;
+}
+.blog-sidebar-link i {
+margin-right: 8px;
+color: #0077B6;
+}
+.floating-whatsapp {
+position: fixed;
+bottom: 30px;
+right: 30px;
+z-index: 100;
+animation: pulse 2s infinite;
+}
+@keyframes pulse {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.1);
+}
+100% {
+transform: scale(1);
+}
+}
+</style>
+</head>
+<body>
+<!-- Barra de navegación -->
+<nav class="blog-header">
+<div class="blog-header-container">
+<div class="flex justify-between items-center">
+<div class="flex items-center">
+<a href="../index.html" class="text-2xl font-bold text-blue-800">DAWE <span class="text-green-600">HEALTHCARE</span></a>
+</div>
+<div class="hidden md:flex space-x-6">
+<a href="../index.html" class="text-gray-700 hover:text-blue-700">Inicio</a>
+<a href="index.html" class="text-blue-700 font-medium">Blog</a>
+<a href="../index.html#servicios" class="text-gray-700 hover:text-blue-700">Servicios</a>
+<a href="../index.html#contacto" class="text-gray-700 hover:text-blue-700">Contacto</a>
+</div>
+<div class="md:hidden">
+<button id="menu-toggle" class="text-blue-800 focus:outline-none">
+<i class="fas fa-bars text-2xl"></i>
+</button>
+</div>
+</div>
+<!-- Menú móvil -->
+<div id="mobile-menu" class="mobile-menu md:hidden bg-white w-full">
+<div class="px-2 pt-2 pb-4 space-y-1">
+<a href="../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Inicio</a>
+<a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50">Blog</a>
+<a href="../index.html#servicios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Servicios</a>
+<a href="../index.html#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contacto</a>
+</div>
+</div>
+</div>
+</nav>
+
+<!-- Encabezado del blog -->
+<section class="blog-header-content">
+<div class="container mx-auto px-6">
+<h1 class="text-3xl md:text-4xl font-bold mb-4">Blog de Salud y Cuidados Domiciliarios</h1>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">Consejos, noticias y artículos sobre hospitalización domiciliaria, cuidados médicos en casa y atención a pacientes crónicos en San Pedro Sula</p>
+<div class="section-divider mt-6 mb-8"></div>
+</div>
+</section>
+
+<!-- Contenido principal del blog -->
+<section class="py-12 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="md:flex gap-8">
+<!-- Artículos del blog -->
+<div class="md:w-2/3">
+<div class="blog-grid">
+<!-- Los artículos del blog se cargarán dinámicamente desde GitHub -->
+</div>
+
+<!-- Paginación -->
+<div class="blog-pagination">
+<a href="#" class="blog-page-link"><i class="fas fa-chevron-left"></i></a>
+<a href="#" class="blog-page-link active">1</a>
+<a href="#" class="blog-page-link">2</a>
+<a href="#" class="blog-page-link">3</a>
+<a href="#" class="blog-page-link"><i class="fas fa-chevron-right"></i></a>
+</div>
+</div>
+
+<!-- Sidebar -->
+<aside class="md:w-1/3 mt-8 md:mt-0">
+<div class="blog-sidebar">
+<h3 class="blog-sidebar-title">Artículos Populares</h3>
+<ul class="blog-sidebar-list">
+<!-- Los artículos populares se cargarán dinámicamente -->
+</ul>
+
+<h3 class="blog-sidebar-title mt-8">Contacto Directo</h3>
+<p class="text-sm text-gray-600 mb-4">Para consultas o más información, contáctanos directamente:</p>
+<div class="space-y-3">
+<a href="https://wa.me/50494572918" class="w-full flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors">
+<i class="fab fa-whatsapp mr-2"></i> WhatsApp
+</a>
+<a href="mailto:cruzangel92@gmail.com" class="w-full flex items-center justify-center bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
+<i class="fas fa-envelope mr-2"></i> Email
+</a>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 blue-gradient text-white">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">¿Necesitas atención médica en casa?</h2>
+<p class="text-xl mb-8 max-w-3xl mx-auto">Contáctanos hoy mismo para evaluar si la hospitalización domiciliaria es adecuada para tu caso.</p>
+<a href="https://wa.me/50494572918" class="cta-button text-white px-10 py-4 rounded-full font-semibold text-xl flex items-center justify-center mx-auto" style="max-width: 300px;">
+<i class="fab fa-whatsapp mr-3 text-2xl"></i> Contactar por WhatsApp
+</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-6">
+<div class="md:flex justify-between items-start">
+<div class="mb-8 md:mb-0">
+<div class="text-2xl font-bold mb-4">DAWE <span class="text-green-400">HEALTHCARE</span></div>
+<p class="max-w-xs text-gray-400">"Hospital virtual" especializado en hospitalización domiciliaria para pacientes con enfermedades crónicas o que necesitan curaciones complejas.</p>
+</div>
+<div class="mb-8 md:mb-0">
+<h3 class="text-lg font-bold mb-4">Contacto</h3>
+<ul class="space-y-2 text-gray-400">
+<li class="flex items-center">
+<i class="fab fa-whatsapp mr-2"></i> +504 9457-2918
+</li>
+<li>San Pedro Sula, Honduras</li>
+<li>Casco urbano de la ciudad</li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Horarios</h3>
+<ul class="space-y-2 text-gray-400">
+<li>Atención 24 horas</li>
+<li>7 días a la semana</li>
+<li>Incluyendo feriados</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 mb-4 md:mb-0">&copy; 2025 DAWE HEALTHCARE. Todos los derechos reservados.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+<i class="fab fa-facebook-f"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+<i class="fab fa-twitter"></i>
+</a>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/50494572918" class="floating-whatsapp bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-all duration-300">
+<i class="fab fa-whatsapp text-3xl"></i>
+</a>
+
+<!-- Script para el menú móvil -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+menuToggle.addEventListener('click', function() {
+mobileMenu.classList.toggle('open');
+});
+// Cerrar menú al hacer clic en un enlace
+const mobileLinks = document.querySelectorAll('#mobile-menu a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.remove('open');
+});
+});
+// Smooth scrolling para todos los enlaces
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
