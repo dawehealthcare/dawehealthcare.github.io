@@ -282,21 +282,6 @@ transform: scale(1);
 <!-- Artículos del blog -->
 <div class="md:w-2/3">
 <div class="blog-grid">
-  <div class="blog-post-card">
-  <img src="https://placehold.co/800x400/28a745/FFFFFF?text=Cuidado+Amable+en+Casa&font=roboto" alt="Cuidado médico en casa" class="blog-post-image">
-  <div class="blog-post-content">
-    <div class="blog-post-date">17 de mayo de 2025</div>
-    <div class="blog-post-title">
-      <a href="cuidado-medico-en-casa.html" class="hover:underline">Cuidado Médico en Casa: La Comodidad de Sanar en tu Hogar</a>
-    </div>
-    <div class="blog-post-excerpt">
-      Descubre cómo Dawe Healthcare lleva el cuidado médico especializado a tu hogar. Beneficios, recomendaciones y más.
-    </div>
-    <a href="cuidado-medico-en-casa.html" class="blog-post-read-more">
-      Leer más <i class="fas fa-arrow-right"></i>
-    </a>
-  </div>
-</div>
 <!-- Los artículos del blog se cargarán dinámicamente desde GitHub -->
 </div>
 
@@ -423,6 +408,94 @@ behavior: 'smooth'
 }
 });
 });
+});
+</script>
+<script src="posts.js"></script>
+<script>
+async function fetchPostMetadata(postFilename) {
+  try {
+    const response = await fetch(postFilename); // Assumes postFilename is relative to the blog directory, e.g., "cuidado-medico-en-casa.html"
+    if (!response.ok) {
+      console.error(`Failed to fetch ${postFilename}: ${response.statusText}`);
+      return null;
+    }
+    const htmlText = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, 'text/html');
+    const metadataScript = doc.getElementById('blog-metadata');
+    if (metadataScript) {
+      return JSON.parse(metadataScript.textContent);
+    } else {
+      console.warn(`No metadata found in ${postFilename}`);
+      return null;
+    }
+  } catch (error) {
+    console.error(`Error fetching or parsing ${postFilename}:`, error);
+    return null;
+  }
+}
+
+async function fetchAllMetadata() {
+  const allMetadata = [];
+  for (const postFile of blogPosts) { // blogPosts is from posts.js
+    const metadata = await fetchPostMetadata(postFile);
+    if (metadata) {
+      allMetadata.push(metadata);
+    }
+  }
+  return allMetadata;
+}
+
+function generateBlogPostCard(postData) {
+  // Ensure all necessary data is present
+  if (!postData || !postData.filename || !postData.title || !postData.date || !postData.excerpt || !postData.image) {
+    console.error('Incomplete post data. Cannot generate card:', postData);
+    return ''; // Return an empty string or handle error as appropriate
+  }
+
+  return `
+    <div class="blog-post-card">
+      <img src="${postData.image}" alt="${postData.title}" class="blog-post-image">
+      <div class="blog-post-content">
+        <div class="blog-post-date">${postData.date}</div>
+        <div class="blog-post-title">
+          <a href="${postData.filename}" class="hover:underline">${postData.title}</a>
+        </div>
+        <div class="blog-post-excerpt">
+          ${postData.excerpt}
+        </div>
+        <a href="${postData.filename}" class="blog-post-read-more">
+          Leer más <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const blogGrid = document.querySelector('.blog-grid');
+  if (!blogGrid) {
+    console.error('Blog grid container not found!');
+    return;
+  }
+
+  // Clear any existing hardcoded content (like the placeholder card)
+  // It's better to remove the hardcoded card directly from the HTML,
+  // but this ensures the space is clear if it wasn't manually removed.
+  // blogGrid.innerHTML = ''; // Optional: see next step about removing the card
+
+  const allPostsData = await fetchAllMetadata();
+
+  if (allPostsData && allPostsData.length > 0) {
+    allPostsData.forEach(postData => {
+      const cardHTML = generateBlogPostCard(postData);
+      if (cardHTML) {
+        blogGrid.innerHTML += cardHTML; // Append the new card
+      }
+    });
+  } else {
+    blogGrid.innerHTML = '<p>No blog posts found or there was an error loading them.</p>'; // Display a message if no posts
+  }
 });
 </script>
 </body>
